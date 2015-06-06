@@ -6,6 +6,7 @@ import com.epam.irasov.knight.entity.Knight;
 import com.epam.irasov.knight.logic.SearchByPrice;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Report {
     private SearchByPrice search = new SearchByPrice();
@@ -19,7 +20,7 @@ public class Report {
     }
 
     public void reportSearch(Knight knight,int min,int max){
-        ArrayList<Ammunition> selectedAmmunition= search.searchPrice(knight, min, max);
+        List<Ammunition> selectedAmmunition= search.searchPrice(knight, min, max);
         String str="Ammunition in the price band reception from "+min+" to "+max+":\n";
         for(Ammunition ammunition:selectedAmmunition){
             str+=ammunition.toString()+"\n";
