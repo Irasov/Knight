@@ -6,18 +6,19 @@ import com.epam.irasov.knight.entity.Knight;
 import java.util.ArrayList;
 
 public class SearchByPrice {
-    private int min= 1000;
-    private int max= 2200;
     private Knight knight;
+    private ArrayList<Ammunition> selectedAmmunition = new ArrayList<Ammunition>();
+    int min;
+    int max;
 
-    public String searchPrice(Knight knight){
-        String str="Ammunition in the price band reception from 1000 to 2200:\n";
-        ArrayList<Ammunition> elementList = knight.getAmmunitionList();
-        for(Ammunition element: elementList){
-            if (element.getPrice()>=this.min && element.getPrice()<=this.max){
-                str+=" name: "+element.getName()+" | type: "+element.getType()+" | price: " + element.getPrice()+"\n";
+    public ArrayList<Ammunition> searchPrice(Knight knight, int min, int max){
+        ArrayList<Ammunition> ammunitions = knight.getAmmunitionList();
+        for(Ammunition ammunition: ammunitions){
+            if (ammunition.getPrice()>=min && ammunition.getPrice()<=max){
+                selectedAmmunition.add(ammunition);
             }
         }
-        return str;
+        return selectedAmmunition;
     }
 }
+
