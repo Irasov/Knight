@@ -1,10 +1,11 @@
 package com.epam.irasov.knight.entity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Knight {
     private String nameKnight;
-    private ArrayList<Ammunition> ammunitionList;
+    private List<Ammunition> ammunitionList;
 
     public Knight(String nameKnight){
         this.nameKnight=nameKnight;
@@ -23,7 +24,7 @@ public class Knight {
         this.ammunitionList = ammunitionList;
     }
 
-    public ArrayList<Ammunition> getAmmunitionList(){
+    public List<Ammunition> getAmmunitionList(){
         return ammunitionList;
     }
 
