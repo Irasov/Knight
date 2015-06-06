@@ -127,7 +127,7 @@ public class Creator {
                 int randWeight = (RANDOM.nextInt(WEAPON_WEIGHT) + ADDITIVE_NOT_RANDOM_ZERO);
                 int randPrice = (RANDOM.nextInt(PRICE_WEAPON) + ADDITIVE_PRICE);
                 int randomNumberOfShells = (RANDOM.nextInt(SHELLS) + ADDITIVE_NOT_RANDOM_ZERO);
-                componentAmmunition = new MelleWeapon(randName, String.valueOf(randomRangedWeapon()), randWeight, randPrice, String.valueOf(randomCaptured()), randomNumberOfShells);
+                componentAmmunition = new RangedWeapon(randName, String.valueOf(randomRangedWeapon()), randWeight, randPrice, String.valueOf(randomCaptured()), randomNumberOfShells);
                 knight.addAmmunition(componentAmmunition);
             }
         }
