@@ -19,6 +19,6 @@ public class Runner {
         sort.sortAmmunition(knight,"weight");
         report.reportKnight(knight);
         report.reportSumPrice(knight);
-        report.reportSearch(knight);
+        report.reportSearch(knight,500,1500);
     }
 }
