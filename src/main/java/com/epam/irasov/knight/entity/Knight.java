@@ -6,6 +6,7 @@ import java.util.List;
 public class Knight {
     private String nameKnight;
     private List<Ammunition> ammunitionList;
+    public static int calculatePrice;
 
     public Knight(String nameKnight){
         this.nameKnight=nameKnight;
@@ -30,14 +31,7 @@ public class Knight {
 
     public void addAmmunition(Ammunition ammunitionTo){
         this.ammunitionList.add(ammunitionTo);
-    }
-
-    public int calculatePrice(){
-        int sumPrice = 0;
-        for(Ammunition elementAmmunition: this.ammunitionList){
-           sumPrice += elementAmmunition.getPrice();
-        }
-        return sumPrice;
+        this.calculatePrice += ammunitionTo.getPrice();
     }
 
     @Override
@@ -46,6 +40,7 @@ public class Knight {
         for(Ammunition element:ammunitionList){
             str+=element.toString()+"\n";
         }
+        str+="Sum gold: "+calculatePrice;
         return str;
     }
 }
