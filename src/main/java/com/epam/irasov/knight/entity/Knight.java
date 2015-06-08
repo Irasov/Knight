@@ -6,11 +6,12 @@ import java.util.List;
 public class Knight {
     private String nameKnight;
     private List<Ammunition> ammunitionList;
-    public static int calculatePrice;
+    private int calculatePrice;
 
     public Knight(String nameKnight){
         this.nameKnight=nameKnight;
         ammunitionList = new ArrayList<Ammunition>();
+        this.calculatePrice=0;
     }
 
     public void setNameKnight(String nameKnight){
@@ -34,13 +35,17 @@ public class Knight {
         this.calculatePrice += ammunitionTo.getPrice();
     }
 
+    public int getCalculatePrice(){
+        return this.calculatePrice;
+    }
+
     @Override
     public String toString(){
         String str=" Name knight: "+nameKnight+"\n"+"Ammunition:\n";
         for(Ammunition element:ammunitionList){
             str+=element.toString()+"\n";
         }
-        str+="Sum gold: "+calculatePrice;
+        str+="Sum gold: "+getCalculatePrice();
         return str;
     }
 }
