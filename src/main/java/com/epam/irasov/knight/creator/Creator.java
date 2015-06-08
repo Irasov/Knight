@@ -94,7 +94,6 @@ public class Creator {
 
     public void CreateAmmunition() {
         Ammunition componentAmmunition = null;
-        int selectionAmmunition;
         for(int i=1; i<=this.countAmmunition;i++) {
             ConstAmmunition[] values = ConstAmmunition.values();
             String randName= String.valueOf(values[RANDOM.nextInt(values.length)]);
