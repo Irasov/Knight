@@ -3,23 +3,23 @@ package com.epam.irasov.knight.entity;
 public class RangedWeapon extends Weapon {
     public enum RangedWeaponType {BOW,CROSS_BOW,JAVELIN};
     private int numberOfShells;
-    private RangedWeapon type;
+    private RangedWeaponType type;
 
     public RangedWeapon(){
 
     }
 
-    public RangedWeapon(ConstAmmunition name,RangedWeapon type,int weight,int price,Captured captured,int numberOfShells){
+    public RangedWeapon(ConstAmmunition name,RangedWeaponType type,int weight,int price,Captured captured,int numberOfShells){
         super(name,weight,price,captured);
         this.numberOfShells=numberOfShells;
         this.type = type;
     }
 
-    public void setType(RangedWeapon type){
+    public void setType(RangedWeaponType type){
         this.type = type;
     }
 
-    public RangedWeapon getType(){
+    public RangedWeaponType getType(){
         return this.type;
     }
 
