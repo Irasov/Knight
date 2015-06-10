@@ -3,8 +3,8 @@ package com.epam.irasov.knight.entity;
 import java.util.Comparator;
 
 public abstract class Ammunition{
-    private String name;
-    private String type;
+    public enum ConstAmmunition {ARMOR,RANGED_WEAPON,MELLE_WEAPON,HELMET,SHIELD};
+    private ConstAmmunition name;
     private int weight;
     private int price;
 
@@ -12,27 +12,18 @@ public abstract class Ammunition{
 
     }
 
-    public Ammunition(String name,String type,int weight,int price){
+    public Ammunition(ConstAmmunition name,int weight,int price){
         this.name=name;
-        this.type=type;
         this.weight=weight;
         this.price=price;
     }
 
-    public void setName(String name) {
+    public void setName(ConstAmmunition name) {
         this.name = name;
     }
 
-    public String getName(){
+    public ConstAmmunition getName(){
         return this.name;
-    }
-
-    public void setType(String type){
-        this.type=type;
-    }
-
-    public String getType(){
-        return this.type;
     }
 
     public void setWeight(int weight){
@@ -69,21 +60,19 @@ public abstract class Ammunition{
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof Ammunition)) return false;
 
         Ammunition that = (Ammunition) o;
 
         if (weight != that.weight) return false;
         if (price != that.price) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        return !(type != null ? !type.equals(that.type) : that.type != null);
+        return !(name != null ? !name.equals(that.name) : that.name != null);
 
     }
 
     @Override
     public int hashCode() {
         int result = name != null ? name.hashCode() : 0;
-        result = 31 * result + (type != null ? type.hashCode() : 0);
         result = 31 * result + weight;
         result = 31 * result + price;
         return result;
@@ -91,6 +80,6 @@ public abstract class Ammunition{
 
     @Override
     public String toString(){
-        return "name: "+getName()+" | type: "+getType()+" | weight(kg): "+getWeight()+" | price(gold): "+getPrice();
+        return "name: "+getName()+" | weight(kg): "+getWeight()+" | price(gold): "+getPrice();
     }
 }
