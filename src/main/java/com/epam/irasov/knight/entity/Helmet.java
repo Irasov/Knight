@@ -1,28 +1,40 @@
 package com.epam.irasov.knight.entity;
 
 public class Helmet extends Ammunition {
+    public enum  HelmetType {NORMAN,DORIE,DEAF};
+    public enum ConstBalaclava {THERE_BALACLAVA,NO_BALACLAVA};
 
-    private String balaclava;
+    private HelmetType type;
+    private ConstBalaclava balaclava;
 
     public Helmet(){
 
     }
 
-    public Helmet(String name,String type,int weight,int price, String balaclava){
-        super(name,type,weight,price);
+    public Helmet(ConstAmmunition name,HelmetType type,int weight,int price, ConstBalaclava balaclava){
+        super(name,weight,price);
         this.balaclava=balaclava;
+        this.type = type;
     }
 
-    public void setBalaclava(String balaclava) {
+    public void setType(HelmetType type){
+        this.type = type;
+    }
+
+    public HelmetType getType(){
+        return this.type;
+    }
+
+    public void setBalaclava(ConstBalaclava balaclava) {
         this.balaclava = balaclava;
     }
 
-    public String getBalaclava(){
+    public ConstBalaclava getBalaclava(){
         return balaclava;
     }
 
     @Override
     public String toString(){
-        return super.toString()+" | balaclava: "+balaclava;
+        return super.toString()+" | type: "+type+" | balaclava: "+balaclava;
     }
 }

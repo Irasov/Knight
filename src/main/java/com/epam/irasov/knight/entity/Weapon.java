@@ -1,22 +1,23 @@
 package com.epam.irasov.knight.entity;
 
 public abstract class Weapon extends Ammunition {
-    private String captured;
+    public enum Captured {CAPTURED,NOT_CAPTURED};
+    private Captured captured;
 
     public Weapon(){
 
     }
 
-    public Weapon(String name, String type, int weight, int price, String captured){
-        super(name,type,weight,price);
+    public Weapon(ConstAmmunition name, int weight, int price, Captured captured){
+        super(name,weight,price);
         this.captured=captured;
     }
 
-    public void setCaptured(String captured) {
+    public void setCaptured(Captured captured) {
         this.captured = captured;
     }
 
-    public String getCaptured(){
+    public Captured getCaptured(){
         return captured;
     }
 
