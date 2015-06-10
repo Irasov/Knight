@@ -13,6 +13,7 @@ public class MelleWeapon extends Weapon {
 
     public MelleWeapon(ConstAmmunition name,MelleWeaponType type,int weight,int price,Captured captured, int lengthWeapon){
         super(name,weight,price,captured);
+        this.lengthWeapon = lengthWeapon;
         this.type = type;
     }
 
