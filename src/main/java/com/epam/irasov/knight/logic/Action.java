@@ -9,13 +9,13 @@ import java.util.List;
 public class Action {
     public static void sortAmmunition(List<Ammunition> a,String variant){
         if(variant=="weight"){
-            Collections.sort(a,new Ammunition.WeightComparator());
+            Collections.sort(a,Ammunition.WEIGHT_ORDER);
         }
         if(variant=="price"){
-            Collections.sort(a, new Ammunition.PriceComparator());
+            Collections.sort(a,Ammunition.PRICE_ORDER);
         }
         if(variant=="name"){
-            Collections.sort(a, new Ammunition.NameComparator());
+            Collections.sort(a,Ammunition.NAME_ORDER);
         }
     }
 
