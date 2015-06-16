@@ -4,6 +4,9 @@ import java.util.Comparator;
 
 public abstract class Ammunition{
     public enum ConstAmmunition {ARMOR,RANGED_WEAPON,MELLE_WEAPON,HELMET,SHIELD};
+    public static final Comparator<Ammunition> WEIGHT_ORDER = new WeightComparator();
+    public static final Comparator<Ammunition> NAME_ORDER = new NameComparator();
+    public static final Comparator<Ammunition> PRICE_ORDER = new PriceComparator();
     private ConstAmmunition name;
     private int weight;
     private int price;
