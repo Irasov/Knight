@@ -2,8 +2,10 @@ package com.epam.irasov.knight.entity;
 
 import java.util.Comparator;
 
-public abstract class Ammunition{
-    public enum ConstAmmunition {ARMOR,RANGED_WEAPON,MELLE_WEAPON,HELMET,SHIELD};
+public abstract class Ammunition {
+    public enum ConstAmmunition {ARMOR, RANGED_WEAPON, MELLE_WEAPON, HELMET, SHIELD}
+
+    ;
     public static final Comparator<Ammunition> WEIGHT_ORDER = new WeightComparator();
     public static final Comparator<Ammunition> NAME_ORDER = new NameComparator();
     public static final Comparator<Ammunition> PRICE_ORDER = new PriceComparator();
@@ -11,42 +13,44 @@ public abstract class Ammunition{
     private int weight;
     private int price;
 
-    public Ammunition(){
+    public Ammunition() {
 
     }
 
-    public Ammunition(ConstAmmunition name,int weight,int price){
-        this.name=name;
-        this.weight=weight;
-        this.price=price;
+    public Ammunition(ConstAmmunition name, int weight, int price) {
+        this.name = name;
+        this.weight = weight;
+        this.price = price;
     }
 
     public void setName(ConstAmmunition name) {
         this.name = name;
     }
 
-    public ConstAmmunition getName(){
+    public ConstAmmunition getName() {
         return this.name;
     }
 
-    public void setWeight(int weight){
-        this.weight=weight;
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
-    public int getWeight(){
+    public int getWeight() {
         return this.weight;
     }
 
-    public void setPrice(int price){
-        this.price=price;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
-    public int getPrice(){
+    public int getPrice() {
         return this.price;
     }
 
     public static class WeightComparator implements Comparator<Ammunition> {
-        public int compare(Ammunition o1, Ammunition o2) {return o1.getWeight()- o2.getWeight();}
+        public int compare(Ammunition o1, Ammunition o2) {
+            return o1.getWeight() - o2.getWeight();
+        }
     }
 
     public static class PriceComparator implements Comparator<Ammunition> {
@@ -54,6 +58,7 @@ public abstract class Ammunition{
             return o1.getPrice() - o2.getPrice();
         }
     }
+
     public static class NameComparator implements Comparator<Ammunition> {
         public int compare(Ammunition o1, Ammunition o2) {
             return o1.getName().compareTo(o2.getName());
@@ -82,7 +87,7 @@ public abstract class Ammunition{
     }
 
     @Override
-    public String toString(){
-        return "name: "+getName()+" | weight(kg): "+getWeight()+" | price(gold): "+getPrice();
+    public String toString() {
+        return "name: " + getName() + " | weight(kg): " + getWeight() + " | price(gold): " + getPrice();
     }
 }
