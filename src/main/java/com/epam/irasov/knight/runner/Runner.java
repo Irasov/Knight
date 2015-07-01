@@ -1,13 +1,9 @@
-package com.epam.irasov.knight.runer;
+package com.epam.irasov.knight.runner;
 
 import com.epam.irasov.knight.creator.Creator;
-import com.epam.irasov.knight.entity.Ammunition;
 import com.epam.irasov.knight.entity.Knight;
 import com.epam.irasov.knight.logic.Action;
 import com.epam.irasov.knight.reporter.Report;
-
-import java.util.Collections;
-import java.util.Comparator;
 
 public class Runner {
     public static final String CUSTOM_NAME_KNIGHT = "Don Quixote";
