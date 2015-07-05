@@ -97,26 +97,26 @@ public class Creator {
                 int randPrice = (RANDOM.nextInt(PRICE_ARMOR) + ADDITIVE_PRICE);
                 componentAmmunition = new Armor(randName, randomArmorType(), randWeight, randPrice,randomConstProtection());
                 knight.addAmmunition(componentAmmunition);
-            }
+            }else
             if (randName.equals(Ammunition.ConstAmmunition.HELMET)) {
                 int randWeight = (RANDOM.nextInt(HELMET_WEIGHT) + ADDITIVE_NOT_RANDOM_ZERO);
                 int randPrice = (RANDOM.nextInt(PRICE_HELMET) + ADDITIVE_PRICE);
                 componentAmmunition = new Helmet(randName, randomHelmetType(), randWeight, randPrice, randomConstBalaclava());
                 knight.addAmmunition(componentAmmunition);
-            }
+            }else
             if (randName.equals(Ammunition.ConstAmmunition.SHIELD)) {
                 int randWeight = (RANDOM.nextInt(SHIELD_WEIGHT) + ADDITIVE_NOT_RANDOM_ZERO);
                 int randPrice = (RANDOM.nextInt(PRICE_SHIELD) + ADDITIVE_PRICE);
                 componentAmmunition = new Shield(randName, randomShieldType(), randWeight, randPrice,randomShieldMaterial());
                 knight.addAmmunition(componentAmmunition);
-            }
+            }else
             if (randName.equals(Ammunition.ConstAmmunition.MELLE_WEAPON)) {
                 int randWeight = (RANDOM.nextInt(WEAPON_WEIGHT) + ADDITIVE_NOT_RANDOM_ZERO);
                 int randPrice = (RANDOM.nextInt(PRICE_WEAPON) + ADDITIVE_PRICE);
                 int randomLengthWeapon = (RANDOM.nextInt(LENGTH_WEAPON) + ADDITIVE_NOT_RANDOM_ZERO);
                 componentAmmunition = new MelleWeapon(randName, randomMelleWeapon(), randWeight, randPrice, randomCaptured(), randomLengthWeapon);
                 knight.addAmmunition(componentAmmunition);
-            }
+            }else
             if (randName.equals(Ammunition.ConstAmmunition.RANGED_WEAPON)) {
                 int randWeight = (RANDOM.nextInt(WEAPON_WEIGHT) + ADDITIVE_NOT_RANDOM_ZERO);
                 int randPrice = (RANDOM.nextInt(PRICE_WEAPON) + ADDITIVE_PRICE);
